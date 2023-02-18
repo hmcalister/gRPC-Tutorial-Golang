@@ -1,0 +1,21 @@
+syntax="proto3";
+ 
+package proto;
+ 
+option go_package = "hmcalister/grpcTutorial";
+ 
+ 
+message NewActivity {
+   string name = 1;
+   bool important = 2;
+}
+ 
+message Activity {
+   string name = 1;
+   bool important = 2;
+   string id = 3;
+}
+ 
+service ActivityService {
+   rpc CreateActivity(NewActivity) returns (Activity) {}
+}
